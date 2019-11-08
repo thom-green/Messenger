@@ -1,0 +1,129 @@
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    line-height: 1.2;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.main {
+    /* padding: 1em; */
+    background-color: white;
+    width: 100%;
+}
+
+.header {
+    background-color: #E91E63;
+    padding: 30px;
+    top: 0;
+    height: auto;
+    padding: 1em;
+    position: fixed;
+    width: 100%;
+}
+
+.headerTop {
+    font-weight: 500;
+    font-size: 1.25rem;
+    color: white;
+}
+
+.headerBottom {
+    font-weight: 300;
+    font-size: 0.7rem;
+    color: white;
+}
+
+
+.chatBody {
+    display: flex;
+    flex-wrap: wrap;
+    /* overflow: scroll; */
+    margin-top: 10vh;
+    margin-bottom: 15vh;
+}
+
+.message {
+    margin: 1rem;
+    width: 100%;
+}
+
+.msg {
+    margin: 1rem;
+    box-shadow: 2px 4px 25px rgba(0, 0, 0, .1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all .2s linear;
+    padding: 15px;
+    max-width: 500px;
+}
+
+.sMsgBody {
+    background: white;
+    color: grey;
+    float: right;
+}
+
+.rMsgBody {
+    background: #E91E63;
+    color: white;
+    float: left;
+}
+
+
+
+.timeStamp {
+    text-align: center;
+    font-weight: 400;
+    font-size: 0.7rem;
+    color: gray;
+    border-bottom: 0.5px solid lightgrey;
+}
+
+
+
+.footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: white;
+    padding: 30px;
+}
+
+.sendBtn {
+    display: inline-block;
+    font-size: 1rem;
+    background: #E91E63;
+    border: 1px solid #E91E63;
+    padding: 0.75rem 1rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    text-align: center;
+}
+
+#msgText {
+    display: inline-block;
+    font-size: 1rem;
+    background: white;
+    border: 1px solid grey;
+    padding: 0.75rem 1rem;
+    color: grey;
+    text-decoration: none;
+    font-weight: 400;
+
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <title>MessagingPoc</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="headerTop">
+                Messenger
+            </div>
+            <div class="headerBottom">
+                Case ID: K24UTW8M3820
+            </div>
+        </div>
+        <div class="chatBody">
+        </div>
+        <div class="footer">
+            <input type="text" name="msg" id="msgText">
+            <button class="sendBtn">Send</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+    <script>
+        $('.sendBtn').click(function () {
+            //Append the users sent message to the DOM
+            var msg = $('#msgText').val();
+            var timeStamp = moment().format("HH:mm");
+            var sentMessage = '';
+            sentMessage += '<div class="message">';
+            sentMessage += '<div class="timeStamp">' + timeStamp + '</div>';
+            sentMessage += '<div class=" msg sMsgBody">';
+            sentMessage += '<p>' + msg + '</p>';
+            sentMessage += '</div>';
+            $(".chatBody").append(sentMessage);
+
+
+            //Get response from SW API and append the result to the DOM
+            $.ajax({
+                url: "http://swquotesapi.digitaljedi.dk/api/SWQuote/RandomStarWarsQuote",
+                type: 'GET',
+                dataType: 'json', // added data type
+                success: function (res) {
+                    setTimeout(function () {
+                        var timeStamp = moment().format("HH:mm");
+                        var responseMessage = '';
+                        responseMessage += '<div class="message">';
+                        responseMessage += '<div class="timeStamp">' + timeStamp + '</div>';
+                        responseMessage += '<div class=" msg rMsgBody">';
+                        responseMessage += '<p>' + res.starWarsQuote + '</p>';
+                        responseMessage += '</div>';
+                        $(".chatBody").append(responseMessage);
+                    }, 2000);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
