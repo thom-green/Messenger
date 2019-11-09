@@ -42,8 +42,7 @@
             sentMessage += '<p>' + msg + '</p>';
             sentMessage += '</div>';
             $(".chatBody").append(sentMessage);
-
-
+            $('html, body').scrollTop($(document).height());
             //Get response from SW API and append the result to the DOM
             $.ajax({
                 url: "http://swquotesapi.digitaljedi.dk/api/SWQuote/RandomStarWarsQuote",
@@ -59,6 +58,7 @@
                         responseMessage += '<p>' + res.starWarsQuote + '</p>';
                         responseMessage += '</div>';
                         $(".chatBody").append(responseMessage);
+                        $('html, body').scrollTop($(document).height());
                     }, 2000);
                 }
             });
