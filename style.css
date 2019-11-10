@@ -73,14 +73,14 @@ body {
 }
 
 .sMsgBody {
-    background: white;
-    color: grey;
+    background: #2ed573;
+    color: white;
     float: right;
 }
 
 .rMsgBody {
-    background: #4b4b4b;
-    color: white;
+    background: white;
+    color: grey;
     float: left;
 }
 
@@ -107,8 +107,8 @@ body {
 .sendBtn {
     display: inline-block;
     font-size: 1rem;
-    background: #4b4b4b;
-    border: 1px solid #4b4b4b;
+    background: #1e90ff;
+    border: 1px solid #1e90ff;
     padding: 0.75rem 1rem;
     color: white;
     text-decoration: none;

@@ -42,6 +42,7 @@
             sentMessage += '<p>' + msg + '</p>';
             sentMessage += '</div>';
             $(".chatBody").append(sentMessage);
+            $("#msgText").val('');
             $('html, body').scrollTop($(document).height());
             //Get response from SW API and append the result to the DOM
             $.ajax({
